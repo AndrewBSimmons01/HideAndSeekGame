@@ -108,43 +108,93 @@ namespace Hide_And_Seek
             }
             else if(room == "BathRoom")
             {
-
-
-
+                RandomString("BathRoom");
             }
             else if(room == "LongHallWay")
             {
-
+                RandomString("LongHallWay");
             }
             else if (room == "FrontYard")
             {
-
+                RandomString("FrontYard");
             }
             else if (room == "BackYard")
             {
-
+                RandomString("BackYard");
             }
             else if (room == "LivingRoom")
             {
-
+                RandomString("LivingRoom");
             }
             else if (room == "Driveway")
             {
-
+                RandomString("Driveway");
             }
-            //var MasterBedroomHidingObjects = new Random();
-            //var MasterBedroomObjectlist = new List<string> { "MasterBedroom", "BedRoom", "Kitchen", "BathRoom", "LongHallWay", "FrontYard", "BackYard", "LivingRoom", "DriveWay" };
-            //int MasterBedroomObjectindex = randomroom.Next(MasterBedroomObjectlist.Count);
-            //Console.WriteLine(Masterlist[index]);
+
+
+            bool foundComputer = false;
+            House PresentHouse = LivingRoom;
+            bool continueplaying = true;
+            while (continueplaying)
+            {
+                Console.Clear();
+                Console.WriteLine(LivingRoom.Message)
+                string interactnavcommand = Console.ReadLine().ToLower();
+                if (interactnavcommand.StartsWith"enter")
+            }
+
+
+
             
         }
         private string  RandomString(string room)
         {
-            var house = new House();
+            House house = rooms[room];
             var randomhideout = new Random();
             int hideout = randomhideout.Next(house.HidingObjects.Count);
             string hiddingplace = house.HidingObjects[hideout];
             return hiddingplace;
         }
+
+        private void MovetoNextRoom(string roomname)
+        {
+            Console.WriteLine("Move tho the next room ");
+            string response= Console.
+
+        }
+
+        public void homescreensplash()
+        {
+            Console.WriteLine("Welcome to hide and seek!\n\n" +
+               "In this game you will be playing hide and seek with the computer\n" +
+               "Each time you begin a new game the computer will be hiding somewhere else\n\n" +
+
+               "You will begin the game in the Living Room\n" +
+               "When you enter each room places to seek for the hiding computer as \n" +
+               "well as places you can go will be diplayed\n\n " +
+
+               "To move to a different room enter 'move to' followed by the \n" +
+               "name of the room. ex. 'move to kitchen'.\n\n" +
+
+               "To check objects in the room for the hiding computer enter 'check'\n" +
+               "followed by the name of the object. ex. 'check couch'.\n\n" +
+
+               "When you do find the computer you will be sent back to this splash screen\n\n" +
+
+               "GOOD LUCK!"
+               );
+        }
+
+
+        
+
+
+        
+        
+          
+        
+        
+        
+        
     }
 }
