@@ -12,7 +12,7 @@ namespace Hide_And_Seek
         public List<string> Rooms { get; }
         public List<string> HidingObjects { get; }
         public string Message { get;  set; }
-        public House(List<string> exits, List<string> rooms, List<string> hidingobjects,string message)
+        public House(List<string> hidingobjects, List<string> exits, List<string> rooms, string message)
         {
             Exits = exits;
             Rooms = rooms;
