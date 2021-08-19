@@ -26,8 +26,10 @@ namespace Hide_And_Seek
 
                "When you do find the computer you will be sent back to this splash screen\n\n" +
 
-               "GOOD LUCK!"
-               );
+               "GOOD LUCK!");
+            Console.ReadKey();
+            Console.Clear();
+               
         }
 
 
@@ -45,34 +47,62 @@ namespace Hide_And_Seek
         };
 
 
-        public static House BackYard = new House(new List<string> { "Couch", "Entertainment center", "Closet" },
-          new List<string> { "Front Yard", "Kitchen" },
-          new List<string> { "Front Yard Exit", "Kitchen Exit", "Master Bedroom Exit", "Bedroom Exit" },
-          "You are in the Living Room. It has a lamp, a long brown leather couch against the wall, " +
-          "an entertainment center with a tv on top, a front door leading to the driveway, and a closet near the front door");
-        public static House BathRoom = new House(new List<string> { "Couch", "Entertainment center", "Closet" },
-          new List<string> { "Front Yard", "Kitchen" },
-          new List<string> { "Front Yard Exit", "Kitchen Exit", "Master Bedroom Exit", "Bedroom Exit" },
-          "You are in the Living Room. It has a lamp, a long brown leather couch against the wall, " +
-          "an entertainment center with a tv on top, a front door leading to the driveway, and a closet near the front door");
+        public static House BackYard = new House(new List<string> { "Trampoline" , "Tree" , "lawn mower" },
+          new List<string> { "LongHallWay" },
+          new List<string> { " " },
+          "You are in the Back Yard. You are standing on a small wooden porch\n" +
+            " with 3 stairs at the end leading into the grass\n" +
+            "The yard has a tall wooden fence. To the left there is a trampoline.\n " +
+            "to the right there is a rather large tree with a tire swing\n" +
+            "Your dad left the Riding Lawn Mower in your yard.\n" +
+            "Hope he comes to get it someday. Does it even work?\n\n" +
+            "You Can check under the trampoline." +
+            "You Can check behind the tree" +
+            "You Can check behind the lawn mower.\n\n" +
+            "You can go back into the HallWay");
+        public static House BathRoom = new House(new List<string> { "Shower" },
+          new List<string> { "LongHallWay" },
+          new List<string> { " " },
+          "You are in the Bathroom. It is a typical bath room.\n" +
+            "The only place to hide here is inside of the shower.\n" +
+            "The shower is a stall with a door that has frosted glass \n" +
+            "you can not see inside.\n\n " +
+            "You can check inside of the shower\n" +
+            "You can go back into the Hall Way");
 
-        public static House Bedroom = new House(new List<string> { "Couch", "Entertainment center", "Closet" },
-          new List<string> { "Front Yard", "Kitchen" },
-          new List<string> { "Front Yard Exit", "Kitchen Exit", "Master Bedroom Exit", "Bedroom Exit" },
-          "You are in the Living Room. It has a lamp, a long brown leather couch against the wall, " +
-          "an entertainment center with a tv on top, a front door leading to the driveway, and a closet near the front door");
+        public static House Bedroom = new House(new List<string> { "boxes", "exercise bike", "clothes rack" },
+          new List<string> { "Longhallway" },
+          new List<string> { " " },
+          "You are in the Bed Room.\n" +
+            " This bed room has been converted to storage. \n" +
+            "The floor is made of wood. There is a ceiling fan.\n" +
+            "There is a stack of boxes. There is an exercise bike.\n" +
+            " There is a rack for hanging clothes.\n" +
+            "You can check behind the boxes.\n" +
+            "You can check behind the exercise bike.\n" +
+            "You can check behind the clothes rack.\n\n" +
+            "You Can go back into the Hall Way\n");
 
-        public static House FrontYard = new House(new List<string> { "Couch", "Entertainment center", "Closet" },
-          new List<string> { "Front Yard", "Kitchen" },
-          new List<string> { "Front Yard Exit", "Kitchen Exit", "Master Bedroom Exit", "Bedroom Exit" },
-          "You are in the Living Room. It has a lamp, a long brown leather couch against the wall, " +
-          "an entertainment center with a tv on top, a front door leading to the driveway, and a closet near the front door");
+        public static House FrontYard = new House(new List<string> { "Behind Car", "In the Car", "Left side of house" , "Right side of house" },
+          new List<string> { "LivingRoom" },
+          new List<string> { " " },
+          "You are in the Front Yard.\n" +
+            " To the left is a Drive Way with a car in it. \n" +
+            "The house has houses to the left and right of it\n" +
+            "Between the houses is grass.\n " +
+            "You can check behind the car.\n"+
+            "You can check in the car.\n" +
+            "You can check the left side of the house.\n" +
+            "You can check the right side of the house\n\n" +
+            "You can go back into the Living Room.");
 
         public static House LivingRoom = new House(new List<string> { "Couch", "Entertainment center", "Closet" },
             new List<string> { "Front Yard", "Kitchen" },
-            new List<string> { "Front Yard Exit", "Kitchen Exit", "Master Bedroom Exit", "Bedroom Exit" },
-            "You are in the Living Room. It has a lamp, a long brown leather couch against the wall, " +
-            "an entertainment center with a tv on top, a front door leading to the driveway, and a closet near the front door");
+            new List<string> { " " },
+            "You are in the Living Room.\n" +
+            " It has a lamp, a long brown leather couch against the wall, " +
+            "an entertainment center with a tv on top,\n" +
+            " a front door leading to the driveway, and a closet near the front door");
 
 
 
@@ -80,21 +110,28 @@ namespace Hide_And_Seek
             new List<string> { "LivingRoom" },
             new List<string> { "Living Room Exit" },
 
-            "You are in the kitchen. Along the wall is a section of cabinets with enough space to hide in them.\n\n" +
-           "on top of the cabinets is cooking surface with a microwave, coffee maker, sink, and dishes.\n\n +" +
-            " In the middle of the kitchen is an island. It has chairs on all sides. You can not see \n\n" +
+            "You are in the kitchen.\n" +
+            " Along the wall is a section of cabinets\n" +
+            "with enough space to hide in them." +
+           "on top of the cabinets is cooking surface\n" +
+            " with a microwave, coffee maker, sink, and dishes.\n\n +" +
+            " In the middle of the kitchen is an island.\n" +
+            " It has chairs on all sides. You can not see \n\n" +
             "what is on the other side of the island. \n\n" +
             "You can go back into the Living Room \n\n" +
-            "You can try to find the computer behind the island. \n\n" +
-            "you can try to find the computer in the cabinets \n\n" +
-            "you can try to find the computer inside the oven\n\n");
+            "You can check behind the island. \n\n" +
+            "You can check in the cabinets. \n\n" +
+            "You can check inside the oven.\n\n");
 
         public static House LongHallWay = new House(
             new List<string> { },
             new List<string> { "LivingRoom", "Master Bedroom", "Bedroom", "Bathroom", "Back yard" },
-            new List<string> { "Master Bedroom Exit", "Bedroom Exit", "Bathroom" },
-            "You are in the long Hallway that leads to the Master Bed Room, another Bedroom, a bathroom, and has a door leading to the back yard\n\n" +
-            "The floor is made of tile and the halway is about 6 feet wide and is 30 feet long \n\n" +
+            new List<string> {" " },
+            "You are in the long Hallway that leads to the Master Bed Room,\n" +
+            " another Bedroom, a bathroom, and has a door\n" +
+            " leading to the back yard\n\n" +
+            "The floor is made of tile and the halway is \n" +
+            "about 6 feet wide and is 30 feet long \n\n" +
             "There is nowhere to hide in the hall way\n\n" +
             "You can go into the back yard\n" +
             "You can go into the Master Bedroom\n" +
@@ -103,9 +140,10 @@ namespace Hide_And_Seek
         public static House MasterBedroom = new House(
             new List<string> { "Dresser one", "Dresser Two", "Closet", "Bed" },
             new List<string> { "Hallway" },
-            new List<string> { "Hallway Exit" },
+            new List<string> { "" },
             "You are in the Master Bedroom\n" +
-            "It has a king size bed. It has two windows. It has two dressers. It has one closet\n\n" +
+            "It has a king size bed. It has two windows.\n" +
+            " It has two dressers. It has one closet\n\n" +
             "You can check under the bed\n" +
             "you can check behind Dresser number one\n" +
             "You can check behind Dresser number two\n" +
@@ -113,47 +151,170 @@ namespace Hide_And_Seek
             "You can go back into the hallway"
             );
 
-        public string RandomString(string room)
+        //public string RandomLocationOfHouse(string room)
+        //{
+        //    House house = rooms[room];
+        //    var randomhideout = new Random();
+        //    int hideout = randomhideout.Next(0, house.HidingObjects.Count - 1);
+        //    string place = house.HidingObjects[hideout];
+        //    return place;
+        //}
+
+
+        public string RandomHouseLocation()
         {
-            House house = rooms[room];
-            var randomhideout = new Random();
-            int hideout = randomhideout.Next(0, house.HidingObjects.Count - 1);
-            string place = house.HidingObjects[hideout];
-            return place;
+            var randomroom = new Random();
+            var roomlist = new List<string> { "MasterBedroom", "Bedroom", "Kitchen", "BathRoom", "FrontYard", "BackYard", "LivingRoom" };
+            int roomindex = randomroom.Next(0, roomlist.Count - 1);
+            string room = roomlist[roomindex];
+            return room;
         }
+
+        public string RandomLocationWithinRoom()
+        {
+            string room = RandomHouseLocation();
+
+            switch(room)
+            {
+                case "MasterBedroom":
+                    List<string> masterRoomList = new List<string> { "bed", "dresser number 1", "dresser number 2", "closet" };
+                    var randomObject1 = new Random();
+                    int objectIndex = randomObject1.Next(0, masterRoomList.Count);
+                    string masterRoomLocation = masterRoomList[objectIndex];
+                    return masterRoomLocation;
+                        
+
+                case "bedroom":
+                    List<string> bedroomList = new List<string> { "boxes", "exercise bike", "clothes rack" };
+                    var randomObject2 = new Random();
+                    int objectIndex2 = randomObject2.Next(0, bedroomList.Count);
+                    string bedRoomRoomLocation = bedroomList[objectIndex2];
+                    return bedRoomRoomLocation;
+
+                case "kitchen":
+                    List<string> kitchenroomList = new List<string> { "cabinets", "island", "oven" };
+                    var randomObject3 = new Random();
+                    int objectIndex3 = randomObject3.Next(0, kitchenroomList.Count);
+                    string kitchenRoomLocation = kitchenroomList[objectIndex3];
+                    return kitchenRoomLocation;
+
+                case "bathroom":
+                    List<string> bathroomroomList = new List<string> { "shower" };
+                    var randomObject4 = new Random();
+                    int objectIndex4 = randomObject4.Next(0, bathroomroomList.Count);
+                    string bathroomRoomLocation = bathroomroomList[objectIndex4];
+                    return bathroomRoomLocation;
+
+                case "frontyard":
+                    List<string> frontyardroomList = new List<string> { "behindCar", "intheCar", "leftsideofhouse" , "rightsideofhouse" };
+                    var randomObject5 = new Random();
+                    int objectIndex5 = randomObject5.Next(0, frontyardroomList.Count);
+                    string frontyardRoomLocation = frontyardroomList[objectIndex5];
+                    return frontyardRoomLocation;
+
+                case "backyard":
+                    List<string> backyardroomList = new List<string> { "trampoline", "tree", "lawnmower" };
+                    var randomObject6 = new Random();
+                    int objectIndex6 = randomObject6.Next(0, backyardroomList.Count);
+                    string backyardRoomLocation = backyardroomList[objectIndex6];
+                    return backyardRoomLocation;
+
+                case "livingroom":
+                    List<string> livingroomList = new List<string> { "couch", "entertainment center", "closet" };
+                    var randomObject7 = new Random();
+                    int objectIndex7 = randomObject7.Next(0, livingroomList.Count);
+                    string livingroomlocation = livingroomList[objectIndex7];
+                    return livingroomlocation;
+            }
+            return null;
+
+        }
+
+        public void LocationCheck(string userInput)
+        {
+            string location = RandomLocationWithinRoom();
+
+            if (userInput == location)
+            {
+                Console.WriteLine("Congrats you win!!");
+            }
+            else
+            {
+                Console.WriteLine("It's not here.");
+            }
+
+            
+        
+        }
+
+
+
+
+        //var randomhideout = new random();
+        //int hideout = randomhideout.next(1, masterbedroom.hidingobjects.count);
+        //hiddingplace = masterbedroom.hidingobjects[hideout];
 
         public void Run()
         {
             homescreensplash();
+            RandomLocationWithinRoom();
+
+
             Console.ReadKey();
-            House currentroom = LivingRoom;
-            string hiddingplace = " ";
+            //House currentroom = LivingRoom;
+            //string hiddingplace = " ";
 
-            var randomroom = new Random();
-            var roomlist = new List<string> { "MasterBedroom", "Bedroom", "Kitchen", "BathRoom", "FrontYard", "BackYard", "LivingRoom" };
-            int roomindex = randomroom.Next(0, roomlist.Count - 1);
+            //var randomroom = new Random();
+            //var roomlist = new List<string> { "MasterBedroom", "Bedroom", "Kitchen", "BathRoom", "FrontYard", "BackYard", "LivingRoom" };
+            //int roomindex = randomroom.Next(0, roomlist.Count - 1);
+            //string room = roomlist[roomindex];
 
-            string room = roomlist[roomindex];
+            bool running = false;
+
             Console.WriteLine(LivingRoom.Message);
+
+            while(running = true) 
+            { 
+
+
+
 
             string interactnavcommand = Console.ReadLine().ToLower();
             if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" masterbedroom"))
-            {
+            {   Console.Clear();
                 Console.WriteLine(MasterBedroom.Message);
                 Console.ReadKey();
+                string check = Console.ReadLine().ToLower();
+                if (check.Contains("check ") && (check.Contains("Dresser number 1") || check.Contains("Dresser number 2") || check.Contains("closet") || check.Contains("bed")))
+                {
+                        LocationCheck(check);
+                } 
             }
             else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" bedroom"))
             {
                 Console.WriteLine(Bedroom.Message);
+                string check = Console.ReadLine().ToLower();
+                if (check.Contains("check ") && check.Contains("boxes") || check.Contains("exercise bike") || check.Contains("clothes rack"))
+                {
+                    LocationCheck(check);
+
+                }
             }
             else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" kitchen"))
             {
                 Console.WriteLine(Kitchen.Message);
-            }
+                    string check = Console.ReadLine().ToLower();
+                    if (check.Contains("check ") && check.Contains("cabinets") || check.Contains("island") || check.Contains("oven"))
+                        LocationCheck(check);
+
+                }
             else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" bathroom"))
             {
                 Console.WriteLine(BathRoom.Message);
-            }
+                    string check = Console.ReadLine().ToLower();
+                    if (check.Contains("check ") && check.Contains("shower"))
+                        LocationCheck(check);
+                }
             else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" long hall way"))
             {
                 Console.WriteLine(LongHallWay.Message);
@@ -161,20 +322,29 @@ namespace Hide_And_Seek
             else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" front yard"))
             {
                 Console.WriteLine(FrontYard.Message);
-            }
+                    string check = Console.ReadLine().ToLower();
+                    if (check.Contains("check ") && check.Contains("behindthecar") || check.Contains("inthecar") || check.Contains("leftsideofhouse") || check.Contains("rightsideofhouse"))
+                        LocationCheck(check);
+                }
             else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" back yard"))
             {
                 Console.WriteLine(BackYard.Message);
-            }
+                    string check = Console.ReadLine().ToLower();
+                    if (check.Contains("check ") && check.Contains("trampoline") || check.Contains("tree") || check.Contains("lawnmower"))
+                        LocationCheck(check);
+                }
             else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" living room"))
             {
                 Console.WriteLine(LivingRoom.Message);
-            }
+                    string check = Console.ReadLine().ToLower();
+                    if (check.Contains("check ") && check.Contains("couch") || check.Contains("entertainmentcenter") || check.Contains("closet"))
+                        LocationCheck(check);
+                }
             else
             {
                 Console.WriteLine("Make another selection");
             }
-
+            }
 
         }
 
@@ -184,9 +354,7 @@ namespace Hide_And_Seek
         //while (keeprunning)
         //if (room == "MasterBedroom")
         //{
-        //    var randomhideout = new Random();
-        //    int hideout = randomhideout.Next(1,MasterBedroom.HidingObjects.Count);
-        //     hiddingplace = MasterBedroom.HidingObjects[hideout];
+
         //}
         //else if (room == "Bedroom")
         //{
