@@ -47,8 +47,8 @@ namespace Hide_And_Seek
         };
 
 
-        public static House BackYard = new House(new List<string> { "Trampoline", "Tree", "lawn mower" },
-          new List<string> { "LongHallWay" },
+        public static House BackYard = new House(new List<string> { "trampoline", "tree", "lawnmower" },
+          new List<string> { "longhallWay" },
           new List<string> { " " },
           "You are in the Back Yard. You are standing on a small wooden porch\n" +
             " with 3 stairs at the end leading into the grass\n" +
@@ -60,8 +60,8 @@ namespace Hide_And_Seek
             "You Can check behind the tree" +
             "You Can check behind the lawn mower.\n\n" +
             "You can go back into the HallWay");
-        public static House BathRoom = new House(new List<string> { "Shower" },
-          new List<string> { "LongHallWay" },
+        public static House BathRoom = new House(new List<string> { "shower" },
+          new List<string> { "longhallway" },
           new List<string> { " " },
           "You are in the Bathroom. It is a typical bath room.\n" +
             "The only place to hide here is inside of the shower.\n" +
@@ -70,8 +70,8 @@ namespace Hide_And_Seek
             "You can check inside of the shower\n" +
             "You can go back into the Hall Way");
 
-        public static House Bedroom = new House(new List<string> { "boxes", "exercise bike", "clothes rack" },
-          new List<string> { "Longhallway" },
+        public static House Bedroom = new House(new List<string> { "boxes", "exercisebike", "clothesrack" },
+          new List<string> { "longhallway" },
           new List<string> { " " },
           "You are in the Bed Room.\n" +
             " This bed room has been converted to storage. \n" +
@@ -83,8 +83,8 @@ namespace Hide_And_Seek
             "You can check behind the clothes rack.\n\n" +
             "You Can go back into the Hall Way\n");
 
-        public static House FrontYard = new House(new List<string> { "Behind Car", "In the Car", "Left side of house", "Right side of house" },
-          new List<string> { "LivingRoom" },
+        public static House FrontYard = new House(new List<string> { "behindcar", "inthecar", "leftsideofhouse", "rightsideofhouse" },
+          new List<string> { "livingroom" },
           new List<string> { " " },
           "You are in the Front Yard.\n" +
             " To the left is a Drive Way with a car in it. \n" +
@@ -96,8 +96,8 @@ namespace Hide_And_Seek
             "You can check the right side of the house\n\n" +
             "You can go back into the Living Room.");
 
-        public static House LivingRoom = new House(new List<string> { "Couch", "Entertainment center", "Closet" },
-            new List<string> { "Front Yard", "Kitchen" },
+        public static House LivingRoom = new House(new List<string> { "couch", "entertainmentcenter", "closet" },
+            new List<string> { "frontyard", "Kitchen" },
             new List<string> { " " },
             "You are in the Living Room.\n" +
             " It has a lamp, a long brown leather couch against the wall, " +
@@ -107,8 +107,8 @@ namespace Hide_And_Seek
 
 
         public static House Kitchen = new House(new List<string> { "cabinets", "island", "oven" },
-            new List<string> { "LivingRoom" },
-            new List<string> { "Living Room Exit" },
+            new List<string> { "livingroom" },
+            new List<string> { "livingroomexit" },
 
             "You are in the kitchen.\n" +
             " Along the wall is a section of cabinets\n" +
@@ -125,7 +125,7 @@ namespace Hide_And_Seek
 
         public static House LongHallWay = new House(
             new List<string> { },
-            new List<string> { "LivingRoom", "Master Bedroom", "Bedroom", "Bathroom", "Back yard" },
+            new List<string> { "livingroom", "masterbedroom", "bedroom", "bathroom", "backyard" },
             new List<string> { " " },
             "You are in the long Hallway that leads to the Master Bed Room,\n" +
             " another Bedroom, a bathroom, and has a door\n" +
@@ -138,8 +138,8 @@ namespace Hide_And_Seek
             "You can go into the BedRoom\n" +
             "You can go into the Bathroom");
         public static House MasterBedroom = new House(
-            new List<string> { "Dresser one", "Dresser Two", "Closet", "Bed" },
-            new List<string> { "Hallway" },
+            new List<string> { "dresserone", "dressertwo", "closet", "bed" },
+            new List<string> { "hallway" },
             new List<string> { "" },
             "You are in the Master Bedroom\n" +
             "It has a king size bed. It has two windows.\n" +
@@ -281,7 +281,7 @@ namespace Hide_And_Seek
                 {
                     Console.WriteLine(Bedroom.Message);
                     string check = Console.ReadLine().ToLower();
-                    if (check.Contains("check ") && check.Contains("boxes") || check.Contains("exercise bike") || check.Contains("clothes rack"))
+                    if (check.Contains("check ") && check.Contains("boxes") || check.Contains("exercisebike") || check.Contains("clothesrack"))
                     {
                         LocationCheck(check);
 
@@ -304,25 +304,25 @@ namespace Hide_And_Seek
                     if (check.Contains("check ") && check.Contains("shower"))
                         LocationCheck(check);
                 }
-                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" long hall way"))
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" longhallway"))
                 {
                     Console.WriteLine(LongHallWay.Message);
                 }
-                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" front yard"))
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" frontyard"))
                 {
                     Console.WriteLine(FrontYard.Message);
                     string check = Console.ReadLine().ToLower();
                     if (check.Contains("check ") && check.Contains("behindthecar") || check.Contains("inthecar") || check.Contains("leftsideofhouse") || check.Contains("rightsideofhouse"))
                         LocationCheck(check);
                 }
-                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" back yard"))
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" backyard"))
                 {
                     Console.WriteLine(BackYard.Message);
                     string check = Console.ReadLine().ToLower();
                     if (check.Contains("check ") && check.Contains("trampoline") || check.Contains("tree") || check.Contains("lawnmower"))
                         LocationCheck(check);
                 }
-                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" living room"))
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" livingroom"))
                 {
                     Console.WriteLine(LivingRoom.Message);
                     string check = Console.ReadLine().ToLower();
@@ -348,7 +348,7 @@ namespace Hide_And_Seek
             while (inBedroom)
             {
                 string check = Console.ReadLine().ToLower();
-                if (check.Contains("check ") && (check.Contains("Dresser number 1") || check.Contains("Dresser number 2") || check.Contains("closet") || check.Contains("bed")))
+                if (check.Contains("check ") && (check.Contains("dresserone") || check.Contains("Dressertwo") || check.Contains("closet") || check.Contains("bed")))
                 {
                     LocationCheck(check);
                 }
