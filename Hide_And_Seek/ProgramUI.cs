@@ -8,7 +8,7 @@ namespace Hide_And_Seek
 {
     class ProgramUI
     {
-        public void homescreensplash()
+        public void HomeScreenSplash()
         {
             Console.WriteLine("Welcome to hide and seek!\n\n" +
                "In this game you will be playing hide and seek with the computer\n" +
@@ -29,7 +29,7 @@ namespace Hide_And_Seek
                "GOOD LUCK!");
             Console.ReadKey();
             Console.Clear();
-               
+
         }
 
 
@@ -47,7 +47,7 @@ namespace Hide_And_Seek
         };
 
 
-        public static House BackYard = new House(new List<string> { "Trampoline" , "Tree" , "lawn mower" },
+        public static House BackYard = new House(new List<string> { "Trampoline", "Tree", "lawn mower" },
           new List<string> { "LongHallWay" },
           new List<string> { " " },
           "You are in the Back Yard. You are standing on a small wooden porch\n" +
@@ -83,14 +83,14 @@ namespace Hide_And_Seek
             "You can check behind the clothes rack.\n\n" +
             "You Can go back into the Hall Way\n");
 
-        public static House FrontYard = new House(new List<string> { "Behind Car", "In the Car", "Left side of house" , "Right side of house" },
+        public static House FrontYard = new House(new List<string> { "Behind Car", "In the Car", "Left side of house", "Right side of house" },
           new List<string> { "LivingRoom" },
           new List<string> { " " },
           "You are in the Front Yard.\n" +
             " To the left is a Drive Way with a car in it. \n" +
             "The house has houses to the left and right of it\n" +
             "Between the houses is grass.\n " +
-            "You can check behind the car.\n"+
+            "You can check behind the car.\n" +
             "You can check in the car.\n" +
             "You can check the left side of the house.\n" +
             "You can check the right side of the house\n\n" +
@@ -126,7 +126,7 @@ namespace Hide_And_Seek
         public static House LongHallWay = new House(
             new List<string> { },
             new List<string> { "LivingRoom", "Master Bedroom", "Bedroom", "Bathroom", "Back yard" },
-            new List<string> {" " },
+            new List<string> { " " },
             "You are in the long Hallway that leads to the Master Bed Room,\n" +
             " another Bedroom, a bathroom, and has a door\n" +
             " leading to the back yard\n\n" +
@@ -174,7 +174,7 @@ namespace Hide_And_Seek
         {
             string room = RandomHouseLocation();
 
-            switch(room)
+            switch (room)
             {
                 case "MasterBedroom":
                     List<string> masterRoomList = new List<string> { "bed", "dresser number 1", "dresser number 2", "closet" };
@@ -182,7 +182,7 @@ namespace Hide_And_Seek
                     int objectIndex = randomObject1.Next(0, masterRoomList.Count);
                     string masterRoomLocation = masterRoomList[objectIndex];
                     return masterRoomLocation;
-                        
+
 
                 case "bedroom":
                     List<string> bedroomList = new List<string> { "boxes", "exercise bike", "clothes rack" };
@@ -206,7 +206,7 @@ namespace Hide_And_Seek
                     return bathroomRoomLocation;
 
                 case "frontyard":
-                    List<string> frontyardroomList = new List<string> { "behindCar", "intheCar", "leftsideofhouse" , "rightsideofhouse" };
+                    List<string> frontyardroomList = new List<string> { "behindCar", "intheCar", "leftsideofhouse", "rightsideofhouse" };
                     var randomObject5 = new Random();
                     int objectIndex5 = randomObject5.Next(0, frontyardroomList.Count);
                     string frontyardRoomLocation = frontyardroomList[objectIndex5];
@@ -243,8 +243,8 @@ namespace Hide_And_Seek
                 Console.WriteLine("It's not here.");
             }
 
-            
-        
+
+
         }
 
 
@@ -256,11 +256,9 @@ namespace Hide_And_Seek
 
         public void Run()
         {
-            homescreensplash();
+            HomeScreenSplash();
             RandomLocationWithinRoom();
 
-
-            Console.ReadKey();
             //House currentroom = LivingRoom;
             //string hiddingplace = " ";
 
@@ -268,82 +266,96 @@ namespace Hide_And_Seek
             //var roomlist = new List<string> { "MasterBedroom", "Bedroom", "Kitchen", "BathRoom", "FrontYard", "BackYard", "LivingRoom" };
             //int roomindex = randomroom.Next(0, roomlist.Count - 1);
             //string room = roomlist[roomindex];
-
             bool running = false;
 
             Console.WriteLine(LivingRoom.Message);
 
-            while(running = true) 
-            { 
-
-
-
-
-            string interactnavcommand = Console.ReadLine().ToLower();
-            if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" masterbedroom"))
-            {   Console.Clear();
-                Console.WriteLine(MasterBedroom.Message);
-                Console.ReadKey();
-                string check = Console.ReadLine().ToLower();
-                if (check.Contains("check ") && (check.Contains("Dresser number 1") || check.Contains("Dresser number 2") || check.Contains("closet") || check.Contains("bed")))
-                {
-                        LocationCheck(check);
-                } 
-            }
-            else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" bedroom"))
+            while (running = true)
             {
-                Console.WriteLine(Bedroom.Message);
-                string check = Console.ReadLine().ToLower();
-                if (check.Contains("check ") && check.Contains("boxes") || check.Contains("exercise bike") || check.Contains("clothes rack"))
+                string interactnavcommand = Console.ReadLine().ToLower();
+                if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" masterbedroom"))
                 {
-                    LocationCheck(check);
-
+                    WhileInMasterBedroom();
                 }
-            }
-            else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" kitchen"))
-            {
-                Console.WriteLine(Kitchen.Message);
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" bedroom"))
+                {
+                    Console.WriteLine(Bedroom.Message);
                     string check = Console.ReadLine().ToLower();
-                    if (check.Contains("check ") && check.Contains("cabinets") || check.Contains("island") || check.Contains("oven"))
+                    if (check.Contains("check ") && check.Contains("boxes") || check.Contains("exercise bike") || check.Contains("clothes rack"))
+                    {
                         LocationCheck(check);
 
+                    }
                 }
-            else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" bathroom"))
-            {
-                Console.WriteLine(BathRoom.Message);
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" kitchen"))
+                {
+                    Console.WriteLine(Kitchen.Message);
+                    string check = Console.ReadLine().ToLower();
+                    if (check.Contains("check ") && (check.Contains("cabinets") || check.Contains("island") || check.Contains("oven")))
+                    {
+                        LocationCheck(check);
+                    }
+
+                }
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" bathroom"))
+                {
+                    Console.WriteLine(BathRoom.Message);
                     string check = Console.ReadLine().ToLower();
                     if (check.Contains("check ") && check.Contains("shower"))
                         LocationCheck(check);
                 }
-            else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" long hall way"))
-            {
-                Console.WriteLine(LongHallWay.Message);
-            }
-            else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" front yard"))
-            {
-                Console.WriteLine(FrontYard.Message);
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" long hall way"))
+                {
+                    Console.WriteLine(LongHallWay.Message);
+                }
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" front yard"))
+                {
+                    Console.WriteLine(FrontYard.Message);
                     string check = Console.ReadLine().ToLower();
                     if (check.Contains("check ") && check.Contains("behindthecar") || check.Contains("inthecar") || check.Contains("leftsideofhouse") || check.Contains("rightsideofhouse"))
                         LocationCheck(check);
                 }
-            else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" back yard"))
-            {
-                Console.WriteLine(BackYard.Message);
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" back yard"))
+                {
+                    Console.WriteLine(BackYard.Message);
                     string check = Console.ReadLine().ToLower();
                     if (check.Contains("check ") && check.Contains("trampoline") || check.Contains("tree") || check.Contains("lawnmower"))
                         LocationCheck(check);
                 }
-            else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" living room"))
-            {
-                Console.WriteLine(LivingRoom.Message);
+                else if (interactnavcommand.Contains("move to") && interactnavcommand.Contains(" living room"))
+                {
+                    Console.WriteLine(LivingRoom.Message);
                     string check = Console.ReadLine().ToLower();
                     if (check.Contains("check ") && check.Contains("couch") || check.Contains("entertainmentcenter") || check.Contains("closet"))
                         LocationCheck(check);
                 }
-            else
-            {
-                Console.WriteLine("Make another selection");
+                else
+                {
+                    Console.WriteLine("Make another selection");
+                }
             }
+
+
+        }
+        public void WhileInMasterBedroom()
+        {
+            Console.Clear();
+            Console.WriteLine(MasterBedroom.Message);
+            Console.ReadKey();
+
+            bool inBedroom = true;
+
+            while (inBedroom)
+            {
+                string check = Console.ReadLine().ToLower();
+                if (check.Contains("check ") && (check.Contains("Dresser number 1") || check.Contains("Dresser number 2") || check.Contains("closet") || check.Contains("bed")))
+                {
+                    LocationCheck(check);
+                }
+                else if (check.Contains("leave"))
+                {
+                    inBedroom = false;
+                }
             }
 
         }
